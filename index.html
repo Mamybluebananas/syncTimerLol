@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>RIOT API</title>
+    <link rel="stylesheet" href="Content/app.css" />
+</head>
+<body>
+<h1>LEAGUE OF LEGEND !!!</h1>
+
+    <div id="askUser">
+        <p>Summoner name: <input type="text" id="inputUser"/></p>
+        <p>region ( na, euw,...) : <input type="text" id="inputRegion"/></p>
+    </div>
+
+    <div id="InfoUser">
+        <p id="errorUser" ></p>
+        <p id="idUser" ></p>
+        <p id="nameUser" ></p>
+    </div>
+
+    <div id="dataIngame">
+    </div>
+
+    <script type="text/javascript" src="Scripts/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="Scripts/utils.js"></script>
+    <script type="text/javascript" src="Scripts/app.js"></script>
+
+    <script type="text/javascript">
+        var appViewModel;
+        $(document).ready(function() {
+            appViewModel = new AppViewModel();
+
+            document.onkeydown = checkKey;
+
+            function checkKey(e) {
+                e = e || window.event;
+                if (e.keyCode == '13') {
+                    console.log("enter !!!!")
+                    appViewModel.searchSummonerByName();
+                }
+            }
+        });
+
+
+    </script>
+
+    </script>
+
+</body>
+</html>
